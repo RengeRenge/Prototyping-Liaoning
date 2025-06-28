@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 🚢 左侧：船体控制与状态 -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <!-- 船体控制 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="左转" />
+
+            <Button
+                android:id="@+id/btnAccelerate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加速"
+                android:layout_marginHorizontal="8dp" />
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="右转" />
+        </LinearLayout>
+
+        <!-- 船体状态显示 -->
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="障碍: - m  温度: --°C 湿度: --%"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 🔫 右侧：机炮控制 -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="机炮水平旋转"
+            android:layout_marginTop="8dp" />
+
+        <SeekBar
+            android:id="@+id/seekHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="180" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="机炮垂直旋转"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/seekVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="90" />
+
+        <Button
+            android:id="@+id/btnFire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发射 🔴"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>
